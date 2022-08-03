@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Constructors from "./Constructors";
+import SeasonsContext from "../Context/SeasonsContext";
 
 const ConstructorsContainer = () => {
   const [constructors, setConstructors] = useState([]);
-  const [season, setSeason] = useState(2022);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const { season } = useContext(SeasonsContext);
 
   useEffect(() => {
     const getData = async () => {

@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Drivers from "./Drivers";
+import SeasonsContext from "../Context/SeasonsContext";
 
 const DriversContainer = () => {
   const [drivers, setDrivers] = useState([]);
-  const [season, setSeason] = useState(2022);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const { season } = useContext(SeasonsContext);
+
   useEffect(() => {
-    const getData = async () => {
+    const getDrivers = async () => {
       try {
         const response = await fetch(
           `https://ergast.com/api/f1/${season}/drivers.json`
@@ -29,7 +31,7 @@ const DriversContainer = () => {
       }
     };
 
-    getData();
+    getDrivers();
   }, [season]);
 
   return <>{isLoading ? "Loading..." : <Drivers drivers={drivers} />}</>;

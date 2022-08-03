@@ -3,10 +3,11 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Box, MenuItem } from "@mui/material";
 import { MyLink, styles } from "./styles";
 import { Link } from "react-router-dom";
+import DropdownContainer from "../Dropdown/DropdownContainer";
 
 const Navbar = () => {
   return (
-    <AppBar position="sticky">
+    <AppBar position="static">
       <Toolbar>
         <Box sx={{ flexGrow: 3, display: "flex" }}>
           <img
@@ -31,6 +32,8 @@ const Navbar = () => {
               <MyLink to="/constructors">Constructors</MyLink>
             </Typography>
           </MenuItem>
+
+          <DropdownContainer />
         </Box>
       </Toolbar>
     </AppBar>
