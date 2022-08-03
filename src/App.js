@@ -4,6 +4,7 @@ import NavbarContainer from "./components/Navbar/NavbarContainer";
 import DriversContainer from "./components/Drivers/DriversContainer";
 import CircuitsContainer from "./components/Circuits/CircuitsContainer";
 import ConstructorsContainer from "./components/Constructors/ConstructorsContainer";
+import CurrentStandingsContainer from "./components/CurrentStandings/CurrentStandingsContainer";
 import { SeasonsProvider } from "./components/Context/SeasonsContext";
 
 function App() {
@@ -12,12 +13,13 @@ function App() {
       <SeasonsProvider>
         <NavbarContainer />
         <Routes>
-          <Route path="/" element={<DriversContainer />}></Route>
-          <Route path="/circuits" element={<CircuitsContainer />}></Route>
+          <Route path="/" element={<DriversContainer />} />
+          <Route path="/circuits" element={<CircuitsContainer />} />
+          <Route path="/constructors" element={<ConstructorsContainer />} />
           <Route
-            path="/constructors"
-            element={<ConstructorsContainer />}
-          ></Route>
+            path="/currentStandings"
+            element={<CurrentStandingsContainer />}
+          />
         </Routes>
       </SeasonsProvider>
     </div>

@@ -5,7 +5,7 @@ import { MyLink, styles } from "./styles";
 import { Link } from "react-router-dom";
 import DropdownContainer from "../Dropdown/DropdownContainer";
 
-const Navbar = () => {
+const Navbar = ({ show }) => {
   return (
     <AppBar position="static">
       <Toolbar>
@@ -32,8 +32,13 @@ const Navbar = () => {
               <MyLink to="/constructors">Constructors</MyLink>
             </Typography>
           </MenuItem>
+          <MenuItem>
+            <Typography variant="h6" component="div">
+              <MyLink to="/currentStandings">Current Standings</MyLink>
+            </Typography>
+          </MenuItem>
 
-          <DropdownContainer />
+          {show ? <DropdownContainer /> : ""}
         </Box>
       </Toolbar>
     </AppBar>
