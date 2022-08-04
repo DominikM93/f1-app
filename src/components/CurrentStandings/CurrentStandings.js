@@ -1,3 +1,5 @@
+import { styles, MyTabelCell } from "./styles";
+import "./styles.css";
 import {
   TableContainer,
   Table,
@@ -7,11 +9,12 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
-import { styles, MyTabelCell } from "./styles";
 
 const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
   const driverPoints = drivers[0].points;
   const constructorPoints = constructors[0].points;
+
+  const places = ["first", "second", "third"];
 
   return (
     <>
@@ -63,7 +66,11 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
                     index
                   ) => (
                     <>
-                      <TableRow scope="row" key={driverId}>
+                      <TableRow
+                        scope="row"
+                        key={driverId}
+                        className={`${places[index]}`}
+                      >
                         <MyTabelCell>{position}</MyTabelCell>
                         <MyTabelCell>{`${givenName} ${familyName}`}</MyTabelCell>
                         <MyTabelCell>{Constructors[0].name}</MyTabelCell>
@@ -114,7 +121,11 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
                     index
                   ) => (
                     <>
-                      <TableRow scope="row" key={constructorId}>
+                      <TableRow
+                        scope="row"
+                        key={constructorId}
+                        className={`${places[index]}`}
+                      >
                         <MyTabelCell>{position}</MyTabelCell>
                         <MyTabelCell>{name}</MyTabelCell>
                         <MyTabelCell>{points}</MyTabelCell>
