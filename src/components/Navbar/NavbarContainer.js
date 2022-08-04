@@ -6,8 +6,13 @@ const NavbarContainer = () => {
   const location = useLocation();
 
   let show = true;
+  const pathname = location.pathname;
 
-  if (location.pathname === "/currentStandings") show = false;
+  if (pathname === "/currentStandings") show = false;
+
+  if (pathname.includes("/drivers") && pathname.length > 9) {
+    show = false;
+  }
 
   return <Navbar show={show} />;
 };

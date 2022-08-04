@@ -1,4 +1,5 @@
 import React from "react";
+import { styles } from "./styles";
 import {
   TableContainer,
   Table,
@@ -9,7 +10,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
-import { styles } from "./styles";
+import { Link } from "react-router-dom";
 
 const Drivers = ({ drivers }) => {
   return (
@@ -43,7 +44,11 @@ const Drivers = ({ drivers }) => {
                 permanentNumber,
               }) => (
                 <TableRow scope="row" key={driverId}>
-                  <TableCell>{`${givenName} ${familyName}`}</TableCell>
+                  <TableCell>
+                    <Link
+                      to={`/drivers/${givenName}_${familyName}`}
+                    >{`${givenName} ${familyName}`}</Link>
+                  </TableCell>
                   <TableCell>{permanentNumber}</TableCell>
                   <TableCell>{nationality}</TableCell>
                   <TableCell>{dateOfBirth}</TableCell>

@@ -52,13 +52,16 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
               </TableHead>
               <TableBody>
                 {drivers.map(
-                  ({
-                    Driver: { driverId, givenName, familyName },
-                    Constructors,
-                    position,
-                    points,
-                    wins,
-                  }) => (
+                  (
+                    {
+                      Driver: { driverId, givenName, familyName },
+                      Constructors,
+                      position,
+                      points,
+                      wins,
+                    },
+                    index
+                  ) => (
                     <>
                       <TableRow scope="row" key={driverId}>
                         <MyTabelCell>{position}</MyTabelCell>
@@ -101,12 +104,15 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
               </TableHead>
               <TableBody>
                 {constructors.map(
-                  ({
-                    position,
-                    points,
-                    wins,
-                    Constructor: { constructorId, name },
-                  }) => (
+                  (
+                    {
+                      position,
+                      points,
+                      wins,
+                      Constructor: { constructorId, name },
+                    },
+                    index
+                  ) => (
                     <>
                       <TableRow scope="row" key={constructorId}>
                         <MyTabelCell>{position}</MyTabelCell>
