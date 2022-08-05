@@ -10,7 +10,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { MyLink } from "../UI/MyLink";
 
 const Drivers = ({ drivers }) => {
   return (
@@ -45,9 +45,9 @@ const Drivers = ({ drivers }) => {
               }) => (
                 <TableRow scope="row" key={driverId}>
                   <TableCell>
-                    <Link
+                    <MyLink
                       to={`/drivers/${givenName}_${familyName}`}
-                    >{`${givenName} ${familyName}`}</Link>
+                    >{`${givenName} ${familyName}`}</MyLink>
                   </TableCell>
                   <TableCell>{permanentNumber}</TableCell>
                   <TableCell>{nationality}</TableCell>

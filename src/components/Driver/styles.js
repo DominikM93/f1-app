@@ -15,6 +15,12 @@ export const styles = {
   tableHead: {
     backgroundColor: "lightGrey",
   },
+  grid: {
+    paddingLeft: "20px",
+  },
+  img: {
+    width: "200px",
+  },
 };
 
 export const MyTabelCell = styled(TableCell)(() => ({
