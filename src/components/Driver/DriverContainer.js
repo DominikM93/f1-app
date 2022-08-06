@@ -28,11 +28,8 @@ const DriverContainer = () => {
           .then(parseJSON) // parse it to Json
           .catch((error) => console.log("There was a problem!", error))
       )
-    ).then((data) => {
+    ).then(([data_driver, data_media, data_results]) => {
       // assign to requested URL as define in array with array index.
-      const data_driver = data[0];
-      const data_media = data[1];
-      const data_results = data[2];
 
       const formatedData_results = data_results.MRData.RaceTable.Races;
 

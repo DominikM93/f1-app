@@ -1,40 +1,23 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import Drivers from "./Drivers";
 import SeasonsContext from "../Context/SeasonsContext";
+import { useFetchData } from "../../Hooks/useFetchData";
 
 const DriversContainer = () => {
-  const [drivers, setDrivers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
   const { season } = useContext(SeasonsContext);
+  const url = `https://ergast.com/api/f1/${season}/drivers.json`;
 
-  useEffect(() => {
-    const getDrivers = async () => {
-      try {
-        const response = await fetch(
-          `https://ergast.com/api/f1/${season}/drivers.json`
-        );
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
-        }
-        const data = await response.json();
-        setDrivers(data.MRData.DriverTable.Drivers);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setDrivers(null);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const { data, error, isLoading } = useFetchData(url);
 
-    getDrivers();
-  }, [season]);
-
-  return <>{isLoading ? "Loading..." : <Drivers drivers={drivers} />}</>;
+  return (
+    <>
+      {isLoading ? (
+        "Loading..."
+      ) : (
+        <Drivers drivers={data.MRData.DriverTable.Drivers} />
+      )}
+    </>
+  );
 };
 
 export default DriversContainer;

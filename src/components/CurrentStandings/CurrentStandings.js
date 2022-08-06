@@ -1,5 +1,4 @@
-import { styles, MyTabelCell } from "./styles";
-import "./styles.css";
+import { styles, MyTabelCell, s } from "./styles";
 import {
   TableContainer,
   Table,
@@ -13,8 +12,6 @@ import {
 const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
   const driverPoints = drivers[0].points;
   const constructorPoints = constructors[0].points;
-
-  const places = ["first", "second", "third"];
 
   return (
     <>
@@ -65,20 +62,14 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
                     },
                     index
                   ) => (
-                    <>
-                      <TableRow
-                        scope="row"
-                        key={driverId}
-                        className={`${places[index]}`}
-                      >
-                        <MyTabelCell>{position}</MyTabelCell>
-                        <MyTabelCell>{`${givenName} ${familyName}`}</MyTabelCell>
-                        <MyTabelCell>{Constructors[0].name}</MyTabelCell>
-                        <MyTabelCell>{points}</MyTabelCell>
-                        <MyTabelCell>{driverPoints - points}</MyTabelCell>
-                        <MyTabelCell>{wins}</MyTabelCell>
-                      </TableRow>
-                    </>
+                    <TableRow scope="row" key={driverId} sx={s[index]}>
+                      <MyTabelCell>{position}</MyTabelCell>
+                      <MyTabelCell>{`${givenName} ${familyName}`}</MyTabelCell>
+                      <MyTabelCell>{Constructors[0].name}</MyTabelCell>
+                      <MyTabelCell>{points}</MyTabelCell>
+                      <MyTabelCell>{driverPoints - points}</MyTabelCell>
+                      <MyTabelCell>{wins}</MyTabelCell>
+                    </TableRow>
                   )
                 )}
               </TableBody>
@@ -120,19 +111,13 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
                     },
                     index
                   ) => (
-                    <>
-                      <TableRow
-                        scope="row"
-                        key={constructorId}
-                        className={`${places[index]}`}
-                      >
-                        <MyTabelCell>{position}</MyTabelCell>
-                        <MyTabelCell>{name}</MyTabelCell>
-                        <MyTabelCell>{points}</MyTabelCell>
-                        <MyTabelCell>{constructorPoints - points}</MyTabelCell>
-                        <MyTabelCell>{wins}</MyTabelCell>
-                      </TableRow>
-                    </>
+                    <TableRow scope="row" key={constructorId} sx={s[index]}>
+                      <MyTabelCell>{position}</MyTabelCell>
+                      <MyTabelCell>{name}</MyTabelCell>
+                      <MyTabelCell>{points}</MyTabelCell>
+                      <MyTabelCell>{constructorPoints - points}</MyTabelCell>
+                      <MyTabelCell>{wins}</MyTabelCell>
+                    </TableRow>
                   )
                 )}
               </TableBody>
