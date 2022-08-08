@@ -1,13 +1,7 @@
-export const styles = {
-  formControl: {
-    width: "100px",
-    marginTop: "10px",
-    marginLeft: "20px",
-  },
-  menuPaper: {
-    maxHeight: 400,
-  },
-  text: {
-    color: "white",
-  },
-};
+import { FormControl } from "@mui/material";
+import { styled } from "@mui/system";
+
+export const StyledFormControl = styled(FormControl)({
+  paddingLeft: "20px",
+  width: "80px",
+});

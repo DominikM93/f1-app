@@ -1,20 +1,18 @@
-import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
-import { styles } from "./styles";
+import { Select, MenuItem } from "@mui/material";
+import { StyledFormControl } from "./styles";
 
 const Dropdown = ({ items, changeSeason }) => {
   return (
-    <FormControl variant="standard" sx={styles.formControl}>
-      <InputLabel sx={styles.text}>Season</InputLabel>
+    <StyledFormControl variant="standard">
       <Select
         displayEmpty
         defaultValue=""
         onChange={(e) => changeSeason(e.target.value)}
         MenuProps={{
           PaperProps: {
-            sx: styles.menuPaper,
+            sx: { maxHeight: 400 },
           },
         }}
-        sx={styles.text}
       >
         {items.map((item) => {
           return (
@@ -24,7 +22,7 @@ const Dropdown = ({ items, changeSeason }) => {
           );
         })}
       </Select>
-    </FormControl>
+    </StyledFormControl>
   );
 };
 

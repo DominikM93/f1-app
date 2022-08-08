@@ -1,29 +1,58 @@
 import { Link } from "react-router-dom";
-import { styled } from "@mui/material/styles";
+import {
+  Box,
+  Drawer,
+  IconButton,
+  MenuItem,
+  Stack,
+  styled,
+  Toolbar,
+} from "@mui/material";
 
-export const MyLink = styled(Link)(() => ({
+export const StyledImg = styled("img")(({ theme }) => ({
+  width: "80px",
+  height: "80px",
+  [theme.breakpoints.down("sm")]: {
+    paddingLeft: "20px",
+  },
+}));
+
+export const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
   color: "white",
 }));
 
-export const styles = {
-  link: {
-    textDecoration: "none",
-    color: "white",
+export const StyledStack = styled(Stack)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
   },
-  box: {
-    backgroundColor: "#1976d2",
-    paddingBottom: "40px",
+}));
+
+export const StyledIconButton = styled(IconButton)(({ theme }) => ({
+  color: "white",
+  [theme.breakpoints.up("sm")]: {
+    display: "none",
   },
-  imgDrawer: {
-    width: "80px",
-    height: "80px",
-    paddingLeft: "30px",
+}));
+
+export const StyledBox = styled(Box)(({ theme }) => ({
+  backgroundColor: "#1976d2",
+  paddingBottom: "40px",
+  width: "200px",
+}));
+
+export const StyledDrawer = styled(Drawer)(({ theme }) => ({
+  "& .MuiPaper-root": {
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    height: "fit-content",
   },
-  img: {
-    width: "80px",
-    height: "80px",
-  },
-  menu: { display: { xs: "block", sm: "none" }, color: "white" },
-  mobile: { display: { xs: "none", sm: "block" } },
-};
+}));
+
+export const StyledToolbar = styled(Toolbar)({
+  height: "65px",
+});
+
+export const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
+  height: "80px",
+  paddingTop: "20px",
+}));

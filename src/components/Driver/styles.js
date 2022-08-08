@@ -1,29 +1,44 @@
-import { TableCell } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { TableCell, styled, Stack, Paper, TableRow } from "@mui/material";
 
-export const styles = {
-  tableContainer: {
-    width: "fit-content",
-    marginLeft: "auto",
-    marginRight: "auto",
-    borderStyle: "solid",
-    borderWidth: "1px",
-    boxShadow: "10px 5px 5px lightGrey",
-    marginBottom: "30px",
-    marginTop: "10px",
+export const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    padding: "4px",
   },
-  tableHead: {
-    backgroundColor: "lightGrey",
-  },
-  grid: {
-    paddingLeft: "20px",
-  },
-  img: {
-    width: "200px",
-  },
-};
-
-export const MyTabelCell = styled(TableCell)(() => ({
-  padding: "5px",
   textAlign: "center",
+}));
+
+export const StyledStack = styled(Stack)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "10px",
+  borderRadius: theme.shape.borderRadius,
+}));
+
+export const StyledImg = styled("img")(({ theme }) => ({
+  width: "250px",
+}));
+
+export const StyledStackDriver = styled(Stack)(({ theme }) => ({
+  width: "70%",
+  margin: "0 auto",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    width: "85%",
+  },
+}));
+
+export const StyledPaperDriver = styled(Paper)(({ theme }) => ({
+  marginRight: "90px",
+  padding: "0 20px",
+  height: "fit-content",
+  [theme.breakpoints.down("sm")]: {
+    margin: "0 0 30px 0",
+  },
+}));
+
+export const StyledPaperResults = styled(Paper)(({ theme }) => ({}));
+
+export const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  backgroundColor: "lightgray",
 }));

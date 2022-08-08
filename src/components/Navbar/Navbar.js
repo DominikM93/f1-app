@@ -1,59 +1,52 @@
 import React from "react";
-
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Box,
-  MenuItem,
-  IconButton,
-} from "@mui/material";
-import { MyLink, styles } from "./styles";
-import { Link } from "react-router-dom";
-import DropdownContainer from "../Dropdown/DropdownContainer";
+import { AppBar, Typography, MenuItem, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MyDrawer from "./MyDrawer";
+import {
+  StyledImg,
+  StyledLink,
+  StyledStack,
+  StyledIconButton,
+  StyledToolbar,
+  StyledMenuItem,
+} from "./styles";
 
-const Navbar = ({ show, mobileOpen, toggleDrawer }) => {
+const Navbar = ({ mobileOpen, toggleDrawer }) => {
   return (
     <>
       <AppBar>
-        <Box sx={{ flexGrow: 3, display: "flex" }}>
-          <Toolbar>
-            <IconButton disabled sx={styles.mobile}>
-              <img style={styles.img} src="/f1_icon.png" alt="f1" />
+        <StyledToolbar>
+          <StyledStack direction="row">
+            <IconButton disabled>
+              <StyledImg src="/f1_icon.png" alt="f1" />
             </IconButton>
-            <IconButton sx={styles.menu} onClick={() => toggleDrawer(true)}>
-              <MenuIcon />
-            </IconButton>
-
-            <MenuItem>
-              <Typography variant="h6" component="div" sx={styles.mobile}>
-                <Link style={styles.link} to="/">
-                  Drivers
-                </Link>
+            <StyledMenuItem>
+              <StyledLink to="/">
+                <Typography variant="h6">Drivers</Typography>
+              </StyledLink>
+            </StyledMenuItem>
+            <StyledMenuItem>
+              <Typography variant="h6">
+                <StyledLink to="/circuits">Circuits</StyledLink>
               </Typography>
-            </MenuItem>
-            <MenuItem>
-              <Typography variant="h6" component="div" sx={styles.mobile}>
-                <MyLink to="/circuits">Circuits</MyLink>
+            </StyledMenuItem>
+            <StyledMenuItem>
+              <Typography variant="h6">
+                <StyledLink to="/constructors">Constructors</StyledLink>
               </Typography>
-            </MenuItem>
-            <MenuItem>
-              <Typography variant="h6" component="div" sx={styles.mobile}>
-                <MyLink to="/constructors">Constructors</MyLink>
+            </StyledMenuItem>
+            <StyledMenuItem>
+              <Typography variant="h6">
+                <StyledLink to="/currentStandings">
+                  Current Standings
+                </StyledLink>
               </Typography>
-            </MenuItem>
-            <MenuItem>
-              <Typography variant="h6" component="div" sx={styles.mobile}>
-                <MyLink to="/currentStandings">Current Standings</MyLink>
-              </Typography>
-            </MenuItem>
-            <MenuItem sx={styles.mobile}>
-              {show ? <DropdownContainer /> : ""}
-            </MenuItem>
-          </Toolbar>
-        </Box>
+            </StyledMenuItem>
+          </StyledStack>
+          <StyledIconButton onClick={() => toggleDrawer(true)}>
+            <MenuIcon />
+          </StyledIconButton>
+        </StyledToolbar>
       </AppBar>
       <MyDrawer mobileOpen={mobileOpen} toggleDrawer={toggleDrawer} />
     </>

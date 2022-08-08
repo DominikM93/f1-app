@@ -6,6 +6,7 @@ const DriverContainer = () => {
   const { id } = useParams();
 
   const [driver, setDriver] = useState();
+  const [driverInfo, setDriverInfo] = useState();
   const [driverMedia, setDriverMedia] = useState();
   const [driverResults, setDriverResults] = useState();
   const [error, setError] = useState(null);
@@ -18,6 +19,7 @@ const DriverContainer = () => {
     `https://en.wikipedia.org/api/rest_v1/page/summary/${id}`,
     `https://en.wikipedia.org/api/rest_v1/page/media-list/${id}`,
     `https://ergast.com/api/f1/drivers/${driverId}/results.json?limit=400`,
+    `http://ergast.com/api/f1/drivers/${driverId}.json`,
   ];
 
   useEffect(() => {
@@ -28,14 +30,15 @@ const DriverContainer = () => {
           .then(parseJSON) // parse it to Json
           .catch((error) => console.log("There was a problem!", error))
       )
-    ).then(([data_driver, data_media, data_results]) => {
+    ).then(([data_driver_info, data_media, data_results, data_driver]) => {
       // assign to requested URL as define in array with array index.
 
       const formatedData_results = data_results.MRData.RaceTable.Races;
 
-      setDriver(data_driver);
+      setDriverInfo(data_driver_info);
       setDriverMedia(data_media);
       setDriverResults(formatedData_results.reverse());
+      setDriver(data_driver);
       setIsLoading(false);
     });
 
@@ -58,9 +61,10 @@ const DriverContainer = () => {
         "Loading..."
       ) : (
         <Driver
-          driver={driver}
+          driverInfo={driverInfo}
           driverMedia={driverMedia.items}
           driverResults={driverResults}
+          driver={driver.MRData.DriverTable.Drivers[0]}
         />
       )}
     </>

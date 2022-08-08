@@ -1,10 +1,11 @@
-import "./styles.css";
+import { Typography } from "@mui/material";
+import { StyledBoxFooter } from "./styles.js";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div>&copy; Dominik Mrowca</div>
-    </div>
+    <StyledBoxFooter>
+      <Typography variant="div">&copy; Dominik Mrowca</Typography>
+    </StyledBoxFooter>
   );
 };
 

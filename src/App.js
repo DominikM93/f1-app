@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
 import DriversContainer from "./components/Drivers/DriversContainer";
@@ -11,13 +10,14 @@ import Footer from "./components/Footer/Footer";
 import { SeasonsProvider } from "./components/Context/SeasonsContext";
 
 import Home from "./components/Home";
+import { StyledBoxContainer, StyledBoxWrap } from "./styles";
 
 function App() {
   return (
-    <div className="page-container">
+    <StyledBoxContainer>
       <SeasonsProvider>
         <NavbarContainer />
-        <div className="content-wrap">
+        <StyledBoxWrap>
           <Routes>
             <Route path="/drivers">
               <Route index element={<DriversContainer />} />
@@ -31,10 +31,10 @@ function App() {
             />
             <Route path="/" element={<Home />} />{" "}
           </Routes>
-        </div>
+        </StyledBoxWrap>
         <Footer />
       </SeasonsProvider>
-    </div>
+    </StyledBoxContainer>
   );
 }
 

@@ -1,15 +1,32 @@
-export const styles = {
-  tableContainer: {
-    width: "fit-content",
-    marginLeft: "auto",
-    marginRight: "auto",
-    borderStyle: "solid",
-    borderWidth: "1px",
-    boxShadow: "10px 5px 5px lightGrey",
-    marginBottom: "30px",
-    marginTop: "10px",
+import { Paper, Stack, TableCell, TableRow, styled } from "@mui/material";
+
+export const StyledPaper = styled(Paper)(({ theme }) => ({
+  width: "80%",
+  margin: "0 auto",
+  textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    width: "90%",
   },
-  tableHead: {
-    backgroundColor: "lightGrey",
+  [theme.breakpoints.up("lg")]: {
+    width: "60%",
   },
-};
+}));
+
+export const StyledStack = styled(Stack)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "10px",
+  borderRadius: theme.shape.borderRadius,
+}));
+
+export const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    padding: "4px",
+  },
+  textAlign: "center",
+}));
+
+export const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  backgroundColor: theme.backgroundColor,
+}));

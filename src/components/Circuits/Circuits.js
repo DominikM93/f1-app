@@ -3,43 +3,54 @@ import {
   Table,
   TableHead,
   TableRow,
-  TableCell,
   TableBody,
   Typography,
   Box,
 } from "@mui/material";
+import DropdownContainer from "../Dropdown/DropdownContainer";
 
-import { styles } from "./styles";
+import {
+  StyledPaper,
+  StyledTableCell,
+  StyledTableRow,
+  StyledStack,
+} from "./styles";
 
 const Circuits = ({ circuits }) => {
   return (
     <Box>
-      <TableContainer sx={styles.tableContainer}>
-        <Table>
-          <TableHead sx={styles.tableHead}>
-            <TableRow>
-              <TableCell>
-                <Typography variant="h5">Circuit Name</Typography>
-              </TableCell>
-              <TableCell>
-                <Typography variant="h5">Country</Typography>
-              </TableCell>
-              <TableCell>
-                <Typography variant="h5">Locality</Typography>
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {circuits.map(({ circuitId, Location, circuitName }) => (
-              <TableRow scope="row" key={circuitId}>
-                <TableCell>{circuitName}</TableCell>
-                <TableCell>{Location.country}</TableCell>
-                <TableCell>{Location.locality}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <StyledStack direction="row">
+        <Typography variant="h5">Pick a Season to see</Typography>
+        <DropdownContainer />
+      </StyledStack>
+      <StyledPaper>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <StyledTableRow>
+                <StyledTableCell>
+                  <Typography variant="h5">Circuit Name</Typography>
+                </StyledTableCell>
+                <StyledTableCell>
+                  <Typography variant="h5">Country</Typography>
+                </StyledTableCell>
+                <StyledTableCell>
+                  <Typography variant="h5">Locality</Typography>
+                </StyledTableCell>
+              </StyledTableRow>
+            </TableHead>
+            <TableBody>
+              {circuits.map(({ circuitId, Location, circuitName }) => (
+                <TableRow scope="row" key={circuitId}>
+                  <StyledTableCell>{circuitName}</StyledTableCell>
+                  <StyledTableCell>{Location.country}</StyledTableCell>
+                  <StyledTableCell>{Location.locality}</StyledTableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </StyledPaper>
     </Box>
   );
 };

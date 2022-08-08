@@ -1,37 +1,55 @@
-import { styled } from "@mui/material/styles";
-import { TableCell } from "@mui/material";
+import { Paper, Stack, styled, TableCell, Typography } from "@mui/material";
 
-export const styles = {
-  tableContainer: {
-    width: "fit-content",
-    borderStyle: "solid",
-    borderWidth: "1px",
-    boxShadow: "10px 5px 5px lightGrey",
-    marginBottom: "30px",
-    marginTop: "10px",
-    marginLeft: "30px",
-  },
-  tableHead: {
-    backgroundColor: "lightGrey",
-  },
-  grid: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: "fit-content",
-    textAlign: "center",
-  },
-  first: {
-    backgroundColor: "gold",
-  },
-  second: {
-    backgroundColor: "silver",
-  },
-  third: {
-    backgroundColor: "#fb7f37",
-  },
-};
+export const StyledTypography = styled(Typography)({
+  padding: "0 30px",
+});
 
-export const s = [
+export const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    padding: "4px",
+  },
+}));
+
+export const StyledPaper = styled(Paper)(({ theme }) => ({
+  width: "80%",
+  margin: "0 auto",
+  textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    width: "90%",
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "60%",
+  },
+  padding: "10px",
+}));
+
+export const StyledStack = styled(Stack)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  width: "70%",
+  margin: "0 auto",
+  flexDirection: "row",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    width: "100%",
+  },
+}));
+
+export const StyledPaper2 = styled(Paper)(({ theme }) => ({
+  width: "80%",
+  margin: "10px 20px",
+  textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    margin: "10px auto",
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "60%",
+  },
+  padding: "10px",
+  height: "fit-content",
+}));
+
+export const places = [
   {
     backgroundColor: "gold",
   },
@@ -42,8 +60,3 @@ export const s = [
     backgroundColor: "#fb7f37",
   },
 ];
-
-export const MyTabelCell = styled(TableCell)(() => ({
-  padding: "5px",
-  textAlign: "center",
-}));

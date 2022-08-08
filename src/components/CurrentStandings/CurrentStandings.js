@@ -1,4 +1,3 @@
-import { styles, MyTabelCell, s } from "./styles";
 import {
   TableContainer,
   Table,
@@ -6,8 +5,15 @@ import {
   TableRow,
   TableBody,
   Typography,
-  Grid,
 } from "@mui/material";
+import {
+  StyledTableCell,
+  places,
+  StyledPaper,
+  StyledStack,
+  StyledPaper2,
+  StyledTypography,
+} from "./styles";
 
 const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
   const driverPoints = drivers[0].points;
@@ -15,39 +21,42 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
 
   return (
     <>
-      <Grid container spacing={4} sx={styles.grid}>
-        <Grid item>
-          <h1>Season {seasonRound.season}</h1>
-        </Grid>
-        <Grid item>
-          <h1>Round {seasonRound.round}</h1>
-        </Grid>
-      </Grid>
-      <Grid container sx={styles.grid}>
-        <Grid item>
+      <StyledPaper>
+        <StyledStack direction="row">
+          <StyledTypography variant="h4">
+            Season {seasonRound.season}
+          </StyledTypography>
+          <StyledTypography variant="h4">
+            Round {seasonRound.round}
+          </StyledTypography>
+        </StyledStack>
+      </StyledPaper>
+
+      <StyledStack>
+        <StyledPaper2>
           <h1>Drivers Standings</h1>
-          <TableContainer sx={styles.tableContainer}>
+          <TableContainer>
             <Table>
-              <TableHead sx={styles.tableHead}>
+              <TableHead>
                 <TableRow>
-                  <MyTabelCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Position</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Driver</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Constructor</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Points</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Difference</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Wins</Typography>
-                  </MyTabelCell>
+                  </StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -62,42 +71,42 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
                     },
                     index
                   ) => (
-                    <TableRow scope="row" key={driverId} sx={s[index]}>
-                      <MyTabelCell>{position}</MyTabelCell>
-                      <MyTabelCell>{`${givenName} ${familyName}`}</MyTabelCell>
-                      <MyTabelCell>{Constructors[0].name}</MyTabelCell>
-                      <MyTabelCell>{points}</MyTabelCell>
-                      <MyTabelCell>{driverPoints - points}</MyTabelCell>
-                      <MyTabelCell>{wins}</MyTabelCell>
+                    <TableRow scope="row" key={driverId} sx={places[index]}>
+                      <StyledTableCell>{position}</StyledTableCell>
+                      <StyledTableCell>{`${givenName} ${familyName}`}</StyledTableCell>
+                      <StyledTableCell>{Constructors[0].name}</StyledTableCell>
+                      <StyledTableCell>{points}</StyledTableCell>
+                      <StyledTableCell>{driverPoints - points}</StyledTableCell>
+                      <StyledTableCell>{wins}</StyledTableCell>
                     </TableRow>
                   )
                 )}
               </TableBody>
             </Table>
           </TableContainer>
-        </Grid>
+        </StyledPaper2>
 
-        <Grid item>
+        <StyledPaper2>
           <h1>Constructors Standings</h1>
-          <TableContainer sx={styles.tableContainer}>
+          <TableContainer>
             <Table>
-              <TableHead sx={styles.tableHead}>
+              <TableHead>
                 <TableRow>
-                  <MyTabelCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Position</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Constructor</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Points</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Difference</Typography>
-                  </MyTabelCell>
-                  <MyTabelCell>
+                  </StyledTableCell>
+                  <StyledTableCell>
                     <Typography variant="h5">Wins</Typography>
-                  </MyTabelCell>
+                  </StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -111,20 +120,26 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
                     },
                     index
                   ) => (
-                    <TableRow scope="row" key={constructorId} sx={s[index]}>
-                      <MyTabelCell>{position}</MyTabelCell>
-                      <MyTabelCell>{name}</MyTabelCell>
-                      <MyTabelCell>{points}</MyTabelCell>
-                      <MyTabelCell>{constructorPoints - points}</MyTabelCell>
-                      <MyTabelCell>{wins}</MyTabelCell>
+                    <TableRow
+                      scope="row"
+                      key={constructorId}
+                      sx={places[index]}
+                    >
+                      <StyledTableCell>{position}</StyledTableCell>
+                      <StyledTableCell>{name}</StyledTableCell>
+                      <StyledTableCell>{points}</StyledTableCell>
+                      <StyledTableCell>
+                        {constructorPoints - points}
+                      </StyledTableCell>
+                      <StyledTableCell>{wins}</StyledTableCell>
                     </TableRow>
                   )
                 )}
               </TableBody>
             </Table>
           </TableContainer>
-        </Grid>
-      </Grid>
+        </StyledPaper2>
+      </StyledStack>
     </>
   );
 };
