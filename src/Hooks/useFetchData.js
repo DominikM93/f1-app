@@ -29,3 +29,27 @@ export const useFetchData = (url) => {
 
   return { data, error, isLoading };
 };
+
+export const useFetchDataOptions = (url) => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "2af5e59140msh26daaefcb935b90p1cc964jsn114e9184daf3",
+        "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
+      },
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((response) => setData(response.response[0]))
+      .catch((err) => setError(err))
+      .finally(() => setIsLoading(false));
+  }, [url]);
+
+  return { data, error, isLoading };
+};

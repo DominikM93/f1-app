@@ -13,6 +13,7 @@ import {
   StyledTableCell,
   StyledTableRow,
   StyledStack,
+  StyledLink,
 } from "./styles";
 
 const Constructors = ({ constructors }) => {
@@ -38,7 +39,9 @@ const Constructors = ({ constructors }) => {
             <TableBody>
               {constructors.map(({ constructorId, name, nationality }) => (
                 <TableRow scope="row" key={constructorId}>
-                  <StyledTableCell>{name}</StyledTableCell>
+                  <StyledTableCell>
+                    <StyledLink to={`/constructors/${name}`}>{name}</StyledLink>
+                  </StyledTableCell>
                   <StyledTableCell>{nationality}</StyledTableCell>
                 </TableRow>
               ))}

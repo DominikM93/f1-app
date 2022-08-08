@@ -54,12 +54,6 @@ const CircuitContainer = () => {
 
   return (
     <>
-      {/* {isLoading || isLoadingApi ? (
-        "Loading"
-      ) : (
-        <Circuit circuit={circuit} data={data} />
-      )} */}
-
       {found ? (
         isLoading || isLoadingApi ? (
           "Loading"
