@@ -11,7 +11,7 @@ const DriversContainer = () => {
 
   const navigate = useNavigate();
   const goToDriver = (id) => {
-    console.log(navigate(id));
+    navigate(id);
   };
 
   return (

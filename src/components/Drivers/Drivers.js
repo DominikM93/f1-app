@@ -1,17 +1,16 @@
 import React from "react";
-import { MyLink } from "../UI/MyLink";
 import {
   StyledPaper,
   StyledTableCell,
   StyledTableRow,
   StyledTableRowData,
   StyledStack,
+  StyledLink,
 } from "./styles";
 import {
   TableContainer,
   Table,
   TableHead,
-  TableRow,
   TableBody,
   Typography,
   Box,
@@ -62,9 +61,9 @@ const Drivers = ({ drivers, goToDriver }) => {
                     }
                   >
                     <StyledTableCell>
-                      <MyLink
+                      <StyledLink
                         to={`/drivers/${givenName}_${familyName}`}
-                      >{`${givenName} ${familyName}`}</MyLink>
+                      >{`${givenName} ${familyName}`}</StyledLink>
                     </StyledTableCell>
                     <StyledTableCell>{permanentNumber}</StyledTableCell>
                     <StyledTableCell>{nationality}</StyledTableCell>

@@ -12,7 +12,7 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 export const StyledPaper = styled(Paper)(({ theme }) => ({
   width: "80%",
-  margin: "0 auto",
+  margin: "20px auto",
   textAlign: "center",
   [theme.breakpoints.down("sm")]: {
     width: "90%",

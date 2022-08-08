@@ -1,4 +1,4 @@
-import { Paper, Stack, styled, TableCell, TableRow } from "@mui/material";
+import { Link, Paper, Stack, styled, TableCell, TableRow } from "@mui/material";
 
 export const StyledPaper = styled(Paper)(({ theme }) => ({
   width: "80%",
@@ -34,3 +34,8 @@ export const StyledStack = styled(Stack)(({ theme }) => ({
 export const StyledTableRowData = styled(TableRow)(({ theme }) => ({
   cursor: "pointer",
 }));
+
+export const StyledLink = styled(Link)({
+  textDecoration: "none",
+  color: "black",
+});

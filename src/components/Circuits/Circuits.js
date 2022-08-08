@@ -14,6 +14,7 @@ import {
   StyledTableCell,
   StyledTableRow,
   StyledStack,
+  StyledLink,
 } from "./styles";
 
 const Circuits = ({ circuits }) => {
@@ -42,7 +43,11 @@ const Circuits = ({ circuits }) => {
             <TableBody>
               {circuits.map(({ circuitId, Location, circuitName }) => (
                 <TableRow scope="row" key={circuitId}>
-                  <StyledTableCell>{circuitName}</StyledTableCell>
+                  <StyledTableCell>
+                    <StyledLink to={`/circuits/${circuitName}`}>
+                      {circuitName}
+                    </StyledLink>
+                  </StyledTableCell>
                   <StyledTableCell>{Location.country}</StyledTableCell>
                   <StyledTableCell>{Location.locality}</StyledTableCell>
                 </TableRow>

@@ -1,4 +1,5 @@
 import { Paper, Stack, TableCell, TableRow, styled } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const StyledPaper = styled(Paper)(({ theme }) => ({
   width: "80%",
@@ -30,3 +31,8 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
 export const StyledTableRow = styled(TableRow)(({ theme }) => ({
   backgroundColor: theme.backgroundColor,
 }));
+
+export const StyledLink = styled(Link)({
+  textDecoration: "none",
+  color: "black",
+});
