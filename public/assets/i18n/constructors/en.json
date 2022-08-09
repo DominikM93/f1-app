@@ -1,0 +1,18 @@
+{
+  "pick_season": "Pick a Season to see",
+  "base": "Base",
+  "constructor_name": "Constructor name",
+  "nationality": "Nationality",
+  "first_team_entry": "First Team Entry",
+  "president": "President",
+  "director": "Director",
+  "technical_manager": "Technical Manager",
+  "world_championships": "World Championships",
+  "engine": "Engine",
+  "chassis": "Chassis",
+  "fastest_laps": "Fastest Laps",
+  "pole_positions": "Pole Positions",
+  "highest_race_finish": "Highest Race Finish",
+  "position": "Position",
+  "number": "Number"
+}

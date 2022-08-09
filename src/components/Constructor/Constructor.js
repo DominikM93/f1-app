@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import {
   StyledPaper,
   StyledImage,
@@ -7,6 +8,8 @@ import {
 } from "./style";
 
 const Constructor = ({ constructor }) => {
+  const { t } = useTranslation("constructors");
+
   return (
     <>
       <Box>
@@ -19,40 +22,44 @@ const Constructor = ({ constructor }) => {
                 alt={constructor.name}
               />
               <Stack direction="column">
-                <Typography variant="h6">Base: {constructor.base}</Typography>
                 <Typography variant="h6">
-                  First Team Entry:{constructor.first_team_entry}
+                  {t("base")}: {constructor.base}
                 </Typography>
                 <Typography variant="h6">
-                  President: {constructor.president}
+                  {t("first_team_entry")}:{constructor.first_team_entry}
                 </Typography>
                 <Typography variant="h6">
-                  Director: {constructor.director}
+                  {t("president")}: {constructor.president}
                 </Typography>
                 <Typography variant="h6">
-                  Technical Manager: {constructor.technical_manager}
+                  {t("director")}: {constructor.director}
                 </Typography>
                 <Typography variant="h6">
-                  World Championships: {constructor.world_championships}
+                  {t("technical_manager")}:{constructor.technical_manager}
                 </Typography>
                 <Typography variant="h6">
-                  Engine: {constructor.engine}
+                  {t("world_championships")}:{constructor.world_championships}
                 </Typography>
                 <Typography variant="h6">
-                  Chassis: {constructor.chassis}
+                  {t("engine")}: {constructor.engine}
                 </Typography>
                 <Typography variant="h6">
-                  Fastest Laps:{constructor.fastest_laps}
+                  {t("chassis")}: {constructor.chassis}
                 </Typography>
                 <Typography variant="h6">
-                  Pole Positions:{constructor.pole_positions}
-                </Typography>
-                <Typography variant="h6">Highest Race Finish</Typography>
-                <Typography variant="h6">
-                  Position: {constructor.highest_race_finish.position}
+                  {t("fastest_laps")}:{constructor.fastest_laps}
                 </Typography>
                 <Typography variant="h6">
-                  Number: {constructor.highest_race_finish.number}
+                  {t("pole_positions")}:{constructor.pole_positions}
+                </Typography>
+                <Typography variant="h6">
+                  {t("highest_race_finish")}{" "}
+                </Typography>
+                <Typography variant="h6">
+                  {t("position")}: {constructor.highest_race_finish.position}
+                </Typography>
+                <Typography variant="h6">
+                  {t("number")}: {constructor.highest_race_finish.number}
                 </Typography>
               </Stack>
             </Stack>

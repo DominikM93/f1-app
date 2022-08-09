@@ -1,0 +1,12 @@
+{
+  "season": "Saison",
+  "round": "Tour",
+  "driverS": "Classement Pilotes",
+  "constructorS": "Classement Constructeurs",
+  "position": "Position",
+  "driver": "Chauffeur",
+  "constructor": "Constructeur",
+  "points": "Points",
+  "difference": "Différence",
+  "wins": "Gagne"
+}

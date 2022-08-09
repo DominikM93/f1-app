@@ -7,6 +7,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import DropdownContainer from "../Dropdown/DropdownContainer";
 import {
   StyledPaper,
@@ -17,10 +18,12 @@ import {
 } from "./styles";
 
 const Constructors = ({ constructors }) => {
+  const { t } = useTranslation("constructors");
+
   return (
     <Box>
       <StyledStack direction="row">
-        <Typography variant="h5">Pick a Season to see</Typography>
+        <Typography variant="h5">{t("pick_season")}</Typography>
         <DropdownContainer />
       </StyledStack>
       <StyledPaper>
@@ -29,10 +32,10 @@ const Constructors = ({ constructors }) => {
             <TableHead>
               <StyledTableRow>
                 <StyledTableCell>
-                  <Typography variant="h5">Constructor name</Typography>
+                  <Typography variant="h5">{t("constructor_name")}</Typography>
                 </StyledTableCell>
                 <StyledTableCell>
-                  <Typography variant="h5">Nationality</Typography>
+                  <Typography variant="h5">{t("nationality")}</Typography>
                 </StyledTableCell>
               </StyledTableRow>
             </TableHead>

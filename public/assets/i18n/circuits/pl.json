@@ -1,0 +1,20 @@
+{
+  "pick_season": "Wybierz sezon, aby zobaczyć",
+  "circuit_name": "Nazwa obwodu",
+  "country": "Kraj",
+  "locality": "Miejscowość",
+  "no_info_found": "Nie znaleziono informacji na",
+  "city": "Miasto",
+  "first": "Pierwsze Grand Prix",
+  "opened": "Otwierany",
+  "owner": "Właściciel",
+  "capacity": "Pojemność",
+  "number_laps": "Liczba okrążeń",
+  "length": "Długość",
+  "race_distance": "Odległość wyścigu",
+  "lap_record": "Rekord okrążenia",
+  "driver": "Kierowca",
+  "time": "Czas",
+  "year": "Rok",
+  "no_info": "Brak informacji"
+}

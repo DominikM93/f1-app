@@ -3,11 +3,13 @@ import {
   Box,
   Drawer,
   IconButton,
+  Menu,
   MenuItem,
   Stack,
   styled,
   Toolbar,
 } from "@mui/material";
+import LanguageIcon from "@mui/icons-material/Language";
 
 export const StyledImg = styled("img")(({ theme }) => ({
   width: "80px",
@@ -55,4 +57,18 @@ export const StyledToolbar = styled(Toolbar)({
 export const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
   height: "80px",
   paddingTop: "20px",
+}));
+
+export const StyledLanguageIcon = styled(LanguageIcon)(({ theme }) => ({
+  color: "white",
+}));
+
+export const StyledMenu = styled(Menu)(({ theme }) => ({
+  "& .MuiList-root": {
+    padding: "5px",
+    textAlign: "center",
+  },
+  "& span": {
+    fontWeight: "bold",
+  },
 }));

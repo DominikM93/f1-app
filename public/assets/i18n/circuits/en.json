@@ -1,0 +1,20 @@
+{
+  "pick_season": "Pick a Season to see",
+  "circuit_name": "Circuit Name",
+  "country": "Country",
+  "locality": "Locality",
+  "no_info_found": "No information found on",
+  "city": "City",
+  "first": "First Grand Prix",
+  "opened": "Opened",
+  "owner": "Owner",
+  "capacity": "Capacity",
+  "number_laps": "Number of Laps",
+  "length": "Length",
+  "race_distance": "Race Distance",
+  "lap_record": "Lap Record",
+  "driver": "Driver",
+  "time": "Time",
+  "year": "Year",
+  "no_info": "No info"
+}

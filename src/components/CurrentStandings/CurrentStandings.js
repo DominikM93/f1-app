@@ -6,6 +6,7 @@ import {
   TableBody,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import {
   StyledTableCell,
   places,
@@ -18,44 +19,45 @@ import {
 const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
   const driverPoints = drivers[0].points;
   const constructorPoints = constructors[0].points;
+  const { t } = useTranslation("standings");
 
   return (
     <>
       <StyledPaper>
         <StyledStack direction="row">
           <StyledTypography variant="h4">
-            Season {seasonRound.season}
+            {t("season")} {seasonRound.season}
           </StyledTypography>
           <StyledTypography variant="h4">
-            Round {seasonRound.round}
+            {t("round")} {seasonRound.round}
           </StyledTypography>
         </StyledStack>
       </StyledPaper>
 
       <StyledStack>
         <StyledPaper2>
-          <h1>Drivers Standings</h1>
+          <h1>{t("driverS")}</h1>
           <TableContainer>
             <Table>
               <TableHead>
                 <TableRow>
                   <StyledTableCell>
-                    <Typography variant="h5">Position</Typography>
+                    <Typography variant="h5">{t("position")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Driver</Typography>
+                    <Typography variant="h5">{t("driver")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Constructor</Typography>
+                    <Typography variant="h5">{t("constructor")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Points</Typography>
+                    <Typography variant="h5">{t("points")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Difference</Typography>
+                    <Typography variant="h5">{t("difference")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Wins</Typography>
+                    <Typography variant="h5">{t("wins")}</Typography>
                   </StyledTableCell>
                 </TableRow>
               </TableHead>
@@ -87,25 +89,25 @@ const CurrentStandings = ({ drivers, constructors, seasonRound }) => {
         </StyledPaper2>
 
         <StyledPaper2>
-          <h1>Constructors Standings</h1>
+          <h1>{t("constructorS")}</h1>
           <TableContainer>
             <Table>
               <TableHead>
                 <TableRow>
                   <StyledTableCell>
-                    <Typography variant="h5">Position</Typography>
+                    <Typography variant="h5">{t("position")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Constructor</Typography>
+                    <Typography variant="h5">{t("constructor")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Points</Typography>
+                    <Typography variant="h5">{t("points")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Difference</Typography>
+                    <Typography variant="h5">{t("difference")}</Typography>
                   </StyledTableCell>
                   <StyledTableCell>
-                    <Typography variant="h5">Wins</Typography>
+                    <Typography variant="h5">{t("wins")}</Typography>
                   </StyledTableCell>
                 </TableRow>
               </TableHead>

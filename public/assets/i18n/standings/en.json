@@ -1,0 +1,12 @@
+{
+  "season": "Season",
+  "round": "Round",
+  "driverS": "Drivers Standings",
+  "constructorS": "Constructors  Standings",
+  "position": "Position",
+  "driver": "Driver",
+  "constructor": "Constructor",
+  "points": "Points",
+  "difference": "Difference",
+  "wins": "Wins"
+}

@@ -1,0 +1,20 @@
+{
+  "pick_season": "Choisissez une saison pour voir",
+  "circuit_name": "Nom du circuit",
+  "country": "Pays",
+  "locality": "Localité",
+  "no_info_found": "Aucune information trouvée sur",
+  "city": "Ville",
+  "first": "Premier Grand-Prix",
+  "opened": "Ouvert",
+  "owner": "Propriétaire",
+  "capacity": "Capacité",
+  "number_laps": "Nombre de tours",
+  "length": "Longueur",
+  "race_distance": "Distance de course",
+  "lap_record": "Record du tour",
+  "driver": "Chauffeur",
+  "time": "Temps",
+  "year": "An",
+  "no_info": "Pas d'information"
+}

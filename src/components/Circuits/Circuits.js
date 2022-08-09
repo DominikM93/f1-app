@@ -7,6 +7,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import DropdownContainer from "../Dropdown/DropdownContainer";
 
 import {
@@ -18,10 +19,12 @@ import {
 } from "./styles";
 
 const Circuits = ({ circuits }) => {
+  const { t } = useTranslation("circuits");
+
   return (
     <Box>
       <StyledStack direction="row">
-        <Typography variant="h5">Pick a Season to see</Typography>
+        <Typography variant="h5">{t("pick_season")}</Typography>
         <DropdownContainer />
       </StyledStack>
       <StyledPaper>
@@ -30,13 +33,13 @@ const Circuits = ({ circuits }) => {
             <TableHead>
               <StyledTableRow>
                 <StyledTableCell>
-                  <Typography variant="h5">Circuit Name</Typography>
+                  <Typography variant="h5">{t("circuit_name")}</Typography>
                 </StyledTableCell>
                 <StyledTableCell>
-                  <Typography variant="h5">Country</Typography>
+                  <Typography variant="h5">{t("country")}</Typography>
                 </StyledTableCell>
                 <StyledTableCell>
-                  <Typography variant="h5">Locality</Typography>
+                  <Typography variant="h5">{t("locality")}</Typography>
                 </StyledTableCell>
               </StyledTableRow>
             </TableHead>
