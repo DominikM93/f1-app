@@ -7,35 +7,38 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const DriverResults = ({ driverResults }) => {
+  const { t } = useTranslation("drivers");
+
   return (
     <StyledStack direction="column">
-      <Typography variant="h3">Race Results</Typography>
+      <Typography variant="h3">{t("race_results")}</Typography>
       <TableContainer>
         <Table>
           <TableHead>
             <StyledTableRow>
               <StyledTableCell>
-                <Typography variant="h5">Season</Typography>
+                <Typography variant="h5">{t("season")}</Typography>
               </StyledTableCell>
               <StyledTableCell>
-                <Typography variant="h5">Race Name</Typography>
+                <Typography variant="h5">{t("race_name")}</Typography>
               </StyledTableCell>
               <StyledTableCell>
-                <Typography variant="h5">Position</Typography>
+                <Typography variant="h5">{t("position")}</Typography>
               </StyledTableCell>
               <StyledTableCell>
-                <Typography variant="h5">Constructor</Typography>
+                <Typography variant="h5">{t("constructor")}</Typography>
               </StyledTableCell>
               <StyledTableCell>
-                <Typography variant="h5">Laps</Typography>
+                <Typography variant="h5">{t("laps")}</Typography>
               </StyledTableCell>
               <StyledTableCell>
-                <Typography variant="h5">Grid</Typography>
+                <Typography variant="h5">{t("grid")}</Typography>
               </StyledTableCell>
               <StyledTableCell>
-                <Typography variant="h5">Points</Typography>
+                <Typography variant="h5">{t("points")}</Typography>
               </StyledTableCell>
             </StyledTableRow>
           </TableHead>

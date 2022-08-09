@@ -1,0 +1,15 @@
+{
+  "pick_season": "Choisissez une saison pour voir",
+  "name": "Nom",
+  "driver_number": "Numéro de conducteur",
+  "nationality": "Nationalité",
+  "dob": "Date de naissance",
+  "race_results": "Résultats de la course",
+  "season": "Saison",
+  "race_name": "Nom de course",
+  "position": "Position",
+  "constructor": "Constructeur",
+  "laps": "Tours",
+  "grid": "Grille",
+  "points": "Points"
+}

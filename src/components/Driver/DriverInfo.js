@@ -1,7 +1,10 @@
 import { StyledImg } from "./styles";
 import { Grid } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const DriverInfo = ({ driverInfo, driverMedia, driver }) => {
+  const { t } = useTranslation("drivers");
+
   return (
     <Grid container direction="column">
       <Grid item>
@@ -13,10 +16,14 @@ const DriverInfo = ({ driverInfo, driverMedia, driver }) => {
         </Grid>
         <Grid item container xs={12} md={6} direction="column">
           <Grid item>
-            <h4>Nationality: {driver.nationality}</h4>
+            <h4>
+              {t("nationality")}: {driver.nationality}
+            </h4>
           </Grid>
           <Grid item>
-            <h4>Date Of Birth: {driver.dateOfBirth}</h4>
+            <h4>
+              {t("dob")}: {driver.dateOfBirth}
+            </h4>
           </Grid>
         </Grid>
       </Grid>

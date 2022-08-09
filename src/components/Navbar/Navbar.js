@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Typography, MenuItem, IconButton } from "@mui/material";
+import { AppBar, Typography, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MyDrawer from "./MyDrawer";
 import {
@@ -10,8 +10,20 @@ import {
   StyledToolbar,
   StyledMenuItem,
 } from "./styles";
+import LanguagePicker from "./LanguagePicker";
+import { useTranslation } from "react-i18next";
 
-const Navbar = ({ mobileOpen, toggleDrawer }) => {
+const Navbar = ({
+  mobileOpen,
+  toggleDrawer,
+  open,
+  anchorEl,
+  setAnchorEl,
+  handleClick,
+  handleClose,
+  changeLanguage,
+}) => {
+  const { t } = useTranslation("navbar");
   return (
     <>
       <AppBar>
@@ -22,30 +34,36 @@ const Navbar = ({ mobileOpen, toggleDrawer }) => {
             </IconButton>
             <StyledMenuItem>
               <StyledLink to="/">
-                <Typography variant="h6">Drivers</Typography>
+                <Typography variant="h6">{t("drivers")}</Typography>
               </StyledLink>
             </StyledMenuItem>
             <StyledMenuItem>
               <Typography variant="h6">
-                <StyledLink to="/circuits">Circuits</StyledLink>
+                <StyledLink to="/circuits">{t("circuits")}</StyledLink>
               </Typography>
             </StyledMenuItem>
             <StyledMenuItem>
               <Typography variant="h6">
-                <StyledLink to="/constructors">Constructors</StyledLink>
+                <StyledLink to="/constructors">{t("constructors")}</StyledLink>
               </Typography>
             </StyledMenuItem>
             <StyledMenuItem>
               <Typography variant="h6">
-                <StyledLink to="/currentStandings">
-                  Current Standings
-                </StyledLink>
+                <StyledLink to="/currentStandings">{t("standings")}</StyledLink>
               </Typography>
             </StyledMenuItem>
           </StyledStack>
           <StyledIconButton onClick={() => toggleDrawer(true)}>
             <MenuIcon />
           </StyledIconButton>
+          <LanguagePicker
+            open={open}
+            anchorEl={anchorEl}
+            setAnchorEl={setAnchorEl}
+            handleClick={handleClick}
+            handleClose={handleClose}
+            changeLanguage={changeLanguage}
+          />
         </StyledToolbar>
       </AppBar>
       <MyDrawer mobileOpen={mobileOpen} toggleDrawer={toggleDrawer} />

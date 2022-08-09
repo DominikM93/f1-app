@@ -14,33 +14,35 @@ import Home from "./components/Home";
 
 function App() {
   return (
-    <StyledBoxContainer>
-      <SeasonsProvider>
-        <NavbarContainer />
-        <StyledBoxWrap>
-          <Routes>
-            <Route path="/drivers">
-              <Route index element={<DriversContainer />} />
-              <Route path=":id" element={<DriverContainer />} />
-            </Route>
-            <Route path="/circuits">
-              <Route index element={<CircuitsContainer />} />
-              <Route path=":name" element={<CircuitContainer />} />
-            </Route>
-            <Route path="/constructors">
-              <Route index element={<ConstructorsContainer />} />
-              <Route path=":name" element={<ConstructorContainer />} />
-            </Route>
-            <Route
-              path="/currentStandings"
-              element={<CurrentStandingsContainer />}
-            />
-            <Route path="/" element={<Home />} />{" "}
-          </Routes>
-        </StyledBoxWrap>
-        <Footer />
-      </SeasonsProvider>
-    </StyledBoxContainer>
+    <>
+      <StyledBoxContainer>
+        <SeasonsProvider>
+          <NavbarContainer />
+          <StyledBoxWrap>
+            <Routes>
+              <Route path="/drivers">
+                <Route index element={<DriversContainer />} />
+                <Route path=":id" element={<DriverContainer />} />
+              </Route>
+              <Route path="/circuits">
+                <Route index element={<CircuitsContainer />} />
+                <Route path=":name" element={<CircuitContainer />} />
+              </Route>
+              <Route path="/constructors">
+                <Route index element={<ConstructorsContainer />} />
+                <Route path=":name" element={<ConstructorContainer />} />
+              </Route>
+              <Route
+                path="/currentStandings"
+                element={<CurrentStandingsContainer />}
+              />
+              <Route path="/" element={<Home />} />{" "}
+            </Routes>
+          </StyledBoxWrap>
+          <Footer />
+        </SeasonsProvider>
+      </StyledBoxContainer>
+    </>
   );
 }
 

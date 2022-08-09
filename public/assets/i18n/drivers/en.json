@@ -1,0 +1,15 @@
+{
+  "pick_season": "Pick a Season to see",
+  "name": "Name",
+  "driver_number": "Driver Number",
+  "nationality": "Nationality",
+  "dob": "Date Of Birth",
+  "race_results": "Race Results",
+  "season": "Season",
+  "race_name": "Race Name",
+  "position": "Position",
+  "constructor": "Constructor",
+  "laps": "Laps",
+  "grid": "Grid",
+  "points": "Points"
+}

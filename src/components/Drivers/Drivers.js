@@ -16,12 +16,15 @@ import {
   Box,
 } from "@mui/material";
 import DropdownContainer from "../Dropdown/DropdownContainer";
+import { useTranslation } from "react-i18next";
 
 const Drivers = ({ drivers, goToDriver }) => {
+  const { t } = useTranslation("drivers");
+
   return (
     <Box>
       <StyledStack direction="row">
-        <Typography variant="h5">Pick a Season to see</Typography>
+        <Typography variant="h5">{t("pick_season")}</Typography>
         <DropdownContainer />
       </StyledStack>
       <StyledPaper>
@@ -30,16 +33,16 @@ const Drivers = ({ drivers, goToDriver }) => {
             <TableHead>
               <StyledTableRow>
                 <StyledTableCell>
-                  <Typography variant="h4">Name</Typography>
+                  <Typography variant="h4">{t("name")}</Typography>
                 </StyledTableCell>
                 <StyledTableCell>
-                  <Typography variant="h4">Driver number</Typography>
+                  <Typography variant="h4">{t("driver_number")}</Typography>
                 </StyledTableCell>
                 <StyledTableCell>
-                  <Typography variant="h4">Nationality</Typography>
+                  <Typography variant="h4">{t("nationality")}</Typography>
                 </StyledTableCell>
                 <StyledTableCell>
-                  <Typography variant="h4">Date Of Birth</Typography>
+                  <Typography variant="h4">{t("dob")}</Typography>
                 </StyledTableCell>
               </StyledTableRow>
             </TableHead>
