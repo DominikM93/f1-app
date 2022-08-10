@@ -20,7 +20,7 @@ export const StyledImg = styled("img")(({ theme }) => ({
 }));
 
 export const StyledStackDriver = styled(Stack)(({ theme }) => ({
-  width: "70%",
+  width: "73%",
   margin: "20px auto",
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",

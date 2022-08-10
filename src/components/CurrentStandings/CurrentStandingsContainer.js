@@ -1,78 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CurrentStandings from "./CurrentStandings";
+import { useFetchData } from "../../Hooks/useFetchData";
 
 const CurrentStandingsContainer = () => {
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLoadingC, setIsLoadingC] = useState(true);
-  const [drivers, setDrivers] = useState();
-  const [seasonRound, setSeasonRound] = useState();
-  const [constructors, setConstructors] = useState();
+  const [standings, setStandings] = useState(true);
+  let formatedDataD;
+  let formatedDataC;
+  let sr;
 
-  useEffect(() => {
-    const getDriversStanding = async () => {
-      try {
-        const response = await fetch(
-          "http://ergast.com/api/f1/current/driverStandings.json"
-        );
+  const {
+    data: dataD,
+    error: errorD,
+    isLoading: isLoadingD,
+  } = useFetchData("http://ergast.com/api/f1/current/driverStandings.json");
 
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
-        }
-        const data = await response.json();
-        const formatedData = data.MRData.StandingsTable.StandingsLists[0];
-        const sr = { season: formatedData.season, round: formatedData.round };
-        setSeasonRound(sr);
-        setDrivers(formatedData.DriverStandings);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setDrivers(null);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  if (!isLoadingD) {
+    formatedDataD = dataD.MRData.StandingsTable.StandingsLists[0];
+    sr = { season: formatedDataD.season, round: formatedDataD.round };
+  }
 
-    const getConstructorsStanding = async () => {
-      try {
-        const response = await fetch(
-          "https://ergast.com/api/f1/current/constructorStandings.json"
-        );
+  const {
+    data: dataC,
+    error: errorC,
+    isLoading: isLoadingC,
+  } = useFetchData(
+    "https://ergast.com/api/f1/current/constructorStandings.json"
+  );
 
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
-        }
-
-        const data = await response.json();
-        const formatedData =
-          data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
-        setConstructors(formatedData);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setConstructors(null);
-      } finally {
-        setIsLoadingC(false);
-      }
-    };
-
-    getDriversStanding();
-    getConstructorsStanding();
-  }, []);
-
+  if (!isLoadingC) {
+    formatedDataC =
+      dataC.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+  }
   return (
     <>
-      {isLoading || isLoadingC ? (
+      {isLoadingD || isLoadingC ? (
         "Loading..."
       ) : (
         <CurrentStandings
-          drivers={drivers}
-          constructors={constructors}
-          seasonRound={seasonRound}
+          drivers={formatedDataD.DriverStandings}
+          constructors={formatedDataC}
+          seasonRound={sr}
+          standings={standings}
+          setStandings={setStandings}
         />
       )}
     </>

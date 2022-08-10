@@ -1,4 +1,11 @@
-import { Paper, Stack, styled, TableCell, Typography } from "@mui/material";
+import {
+  Button,
+  Paper,
+  Stack,
+  styled,
+  TableCell,
+  Typography,
+} from "@mui/material";
 
 export const StyledTypography = styled(Typography)({
   padding: "0 30px",
@@ -60,3 +67,23 @@ export const places = [
     backgroundColor: "#fb7f37",
   },
 ];
+
+export const StyledStackCharts = styled(Stack)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  width: "90%",
+  margin: "0 auto",
+  flexDirection: "row",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    width: "100%",
+  },
+}));
+
+export const StyledButton = styled(Button)({
+  backgroundColor: "#1976d2",
+  color: "white",
+  "&:hover": {
+    backgroundColor: "#76b3ef",
+  },
+});

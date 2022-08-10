@@ -10,7 +10,7 @@ export const StyledPaper = styled(Paper)(({ theme }) => ({
 }));
 
 export const StyledImage = styled("img")(({ theme }) => ({
-  height: "fit-content",
+  height: "200px",
   [theme.breakpoints.down("sm")]: {
     display: "none",
   },

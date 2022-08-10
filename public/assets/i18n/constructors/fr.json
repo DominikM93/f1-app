@@ -1,6 +1,7 @@
 {
   "pick_season": "Choisissez une saison pour voir",
   "base": "Base",
+  "no_info_found": "Aucune information trouvée sur",
   "constructor_name": "Nom du constructeur",
   "nationality": "Nationalité",
   "first_team_entry": "Entrée de la première équipe",

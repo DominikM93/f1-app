@@ -8,5 +8,7 @@
   "constructor": "Konstruktor",
   "points": "Punkty",
   "difference": "Różnica",
-  "wins": "Wygrane"
+  "wins": "Wygrane",
+  "show_constructor": "Pokaż rankingi konstruktorów",
+  "show_driver": "Pokaż klasyfikacje kierowców"
 }

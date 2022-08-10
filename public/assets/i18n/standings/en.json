@@ -8,5 +8,7 @@
   "constructor": "Constructor",
   "points": "Points",
   "difference": "Difference",
-  "wins": "Wins"
+  "wins": "Wins",
+  "show_constructor": "Show Constructors Standings",
+  "show_driver": "Show Drivers Standings"
 }
