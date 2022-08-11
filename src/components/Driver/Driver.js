@@ -6,7 +6,14 @@ import {
   StyledPaperResults,
 } from "./styles";
 
-const Driver = ({ driverInfo, driverMedia, driverResults, driver }) => {
+const Driver = ({
+  driverInfo,
+  driverMedia,
+  driverResults,
+  driver,
+  changePage,
+  totalPages,
+}) => {
   return (
     <StyledStackDriver direction="row">
       <StyledPaperDriver elevation={2}>
@@ -18,7 +25,11 @@ const Driver = ({ driverInfo, driverMedia, driverResults, driver }) => {
       </StyledPaperDriver>
 
       <StyledPaperResults elevation={2}>
-        <DriverResults driverResults={driverResults} />
+        <DriverResults
+          driverResults={driverResults}
+          changePage={changePage}
+          totalPages={totalPages}
+        />
       </StyledPaperResults>
     </StyledStackDriver>
   );

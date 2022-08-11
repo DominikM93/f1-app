@@ -5,6 +5,8 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
     padding: "4px",
   },
   textAlign: "center",
+  paddingTop: "2px",
+  paddingBottom: "2px",
 }));
 
 export const StyledStack = styled(Stack)(({ theme }) => ({

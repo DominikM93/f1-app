@@ -1,5 +1,6 @@
 import { StyledTableCell, StyledTableRow, StyledStack } from "./styles";
 import {
+  Pagination,
   Table,
   TableBody,
   TableContainer,
@@ -9,9 +10,8 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-const DriverResults = ({ driverResults }) => {
+const DriverResults = ({ driverResults, changePage, totalPages }) => {
   const { t } = useTranslation("drivers");
-
   return (
     <StyledStack direction="column">
       <Typography variant="h3">{t("race_results")}</Typography>
@@ -44,7 +44,7 @@ const DriverResults = ({ driverResults }) => {
           </TableHead>
           <TableBody>
             {driverResults.map(({ season, raceName, Results }, index) => (
-              <TableRow key={index}>
+              <TableRow sx={{ color: "red" }} key={index}>
                 <StyledTableCell>{season}</StyledTableCell>
                 <StyledTableCell>{raceName}</StyledTableCell>
                 <StyledTableCell>{Results[0].position}</StyledTableCell>
@@ -57,6 +57,7 @@ const DriverResults = ({ driverResults }) => {
           </TableBody>
         </Table>
       </TableContainer>
+      <Pagination count={totalPages} onChange={changePage} />
     </StyledStack>
   );
 };

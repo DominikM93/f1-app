@@ -87,3 +87,20 @@ export const StyledButton = styled(Button)({
     backgroundColor: "#76b3ef",
   },
 });
+
+export const StyledPaperChart = styled(Paper)(({ theme }) => ({
+  height: "fit-content",
+  margin: "10px 20px",
+  paddingRight: "20px",
+  [theme.breakpoints.down("sm")]: {
+    width: "80%",
+    margin: "0 auto",
+  },
+}));
+
+export const StyledStackResults = styled(Stack)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    width: "90%",
+  },
+}));

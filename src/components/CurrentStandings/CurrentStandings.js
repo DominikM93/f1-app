@@ -8,7 +8,7 @@ import {
 } from "./styles";
 import DriverStandingContainer from "../DriverStanding/DriverStandingContainer";
 import ConstructorStandingContainer from "../ConstructorStanding/ConstructorStanding";
-import CustomPieChart from "../ConstructorStanding/CustomPieChart";
+import CustomPieChart from "./CustomPieChart";
 
 const CurrentStandings = ({
   drivers,

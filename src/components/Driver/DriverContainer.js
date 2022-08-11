@@ -3,6 +3,18 @@ import Driver from "./Driver";
 import { useParams } from "react-router-dom";
 
 const DriverContainer = () => {
+  const [page, setPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
   const { id } = useParams();
 
   const [driver, setDriver] = useState();
@@ -55,6 +67,23 @@ const DriverContainer = () => {
     }
   }, []);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowPerPage, setRowPerPage] = useState(10);
+
+  const indexOfLastItem = currentPage * rowPerPage;
+  const indexOfFirstItem = indexOfLastItem - rowPerPage;
+  let currentItems;
+  let totalPages = 0;
+
+  if (!isLoading) {
+    currentItems = driverResults.slice(indexOfFirstItem, indexOfLastItem);
+    totalPages = Math.ceil(driverResults.length / rowPerPage);
+  }
+
+  const changePage = (event, page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <>
       {isLoading ? (
@@ -63,8 +92,11 @@ const DriverContainer = () => {
         <Driver
           driverInfo={driverInfo}
           driverMedia={driverMedia.items}
-          driverResults={driverResults}
+          driverResults={currentItems}
           driver={driver.MRData.DriverTable.Drivers[0]}
+          currentPage={currentPage}
+          changePage={changePage}
+          totalPages={totalPages}
         />
       )}
     </>

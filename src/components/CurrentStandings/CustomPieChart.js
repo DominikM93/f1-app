@@ -1,6 +1,8 @@
+import { Stack, Typography } from "@mui/material";
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import { StyledPaperChart, StyledStackResults } from "./styles";
+import Brightness1Icon from "@mui/icons-material/Brightness1";
 
 const CustomPieChart = ({ data, type }) => {
   let chartData = [];
@@ -53,9 +55,12 @@ const CustomPieChart = ({ data, type }) => {
         </PieChart>
         <ul>
           {chartData.map((entry, index) => (
-            <li style={{ color: entry.color }} key={index}>
-              {entry.name}
-            </li>
+            <Stack direction="row" key={index}>
+              <span style={{ color: entry.color }}>
+                <Brightness1Icon />
+              </span>
+              <Typography>{entry.name}</Typography>
+            </Stack>
           ))}
         </ul>
       </StyledStackResults>
