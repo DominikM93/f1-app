@@ -39,7 +39,7 @@ export const useFetchDataOptions = (url) => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "2af5e59140msh26daaefcb935b90p1cc964jsn114e9184daf3",
+        "X-RapidAPI-Key": process.env.REACT_APP_APIKey,
         "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
       },
     };

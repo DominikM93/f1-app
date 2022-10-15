@@ -18,7 +18,7 @@ function App() {
       <StyledBoxContainer>
         <SeasonsProvider>
           <NavbarContainer />
-          {/* <StyledBoxWrap>
+          <StyledBoxWrap>
             <Routes>
               <Route path="/drivers">
                 <Route index element={<DriversContainer />} />
@@ -38,7 +38,7 @@ function App() {
               />
               <Route path="/" element={<Home />} />{" "}
             </Routes>
-          </StyledBoxWrap> */}
+          </StyledBoxWrap>
           <Footer />
         </SeasonsProvider>
       </StyledBoxContainer>

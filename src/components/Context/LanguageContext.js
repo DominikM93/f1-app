@@ -1,7 +1,6 @@
 import React, { createContext, useEffect } from "react";
 import cookies from "js-cookie";
 import { useTranslation } from "react-i18next";
-import "../../i18n";
 
 const LanguageContext = createContext();
 
@@ -18,7 +17,6 @@ export const LanguageProvider = ({ children }) => {
   const { t } = useTranslation("navbar");
 
   useEffect(() => {
-    document.body.dir = currentLanguage.dir || "ltr";
     document.title = t("app_title");
   }, [currentLanguage, t]);
 
